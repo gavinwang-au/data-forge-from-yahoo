@@ -3,6 +3,7 @@
 module.exports = function (dataForge, globalOptions) {
 
 	var Enumerable = require('linq');
+	var moment = require('moment');
 
 	globalOptions = globalOptions || {};
 	

@@ -1,6 +1,6 @@
 {
   "name": "data-forge-from-yahoo",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Data-Forge plugin for pulling data from the Yahoo financial API.",
   "main": "index.js",
   "scripts": {
@@ -26,6 +26,7 @@
   "homepage": "https://github.com/data-forge/data-forge-from-yahoo",
   "dependencies": {
     "linq": "^3.0.5",
+    "moment": "^2.11.0",
     "request-promise": "^1.0.2"
   }
 }
