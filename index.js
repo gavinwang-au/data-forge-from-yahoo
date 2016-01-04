@@ -2,6 +2,8 @@
 
 module.exports = function (dataForge, globalOptions) {
 
+	var Enumerable = require('linq');
+
 	globalOptions = globalOptions || {};
 	
 	var request = require('request-promise');
