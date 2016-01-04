@@ -1,6 +1,8 @@
 'use strict';
 
 module.exports = function (dataForge, globalOptions) {
+
+	globalOptions = globalOptions || {};
 	
 	var request = require('request-promise');
 	

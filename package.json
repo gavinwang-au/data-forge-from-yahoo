@@ -1,6 +1,6 @@
 {
   "name": "data-forge-from-yahoo",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Data-Forge plugin for pulling data from the Yahoo financial API.",
   "main": "index.js",
   "scripts": {
