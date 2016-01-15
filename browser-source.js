@@ -1,4 +1,4 @@
 
 require('./index')(dataForge, {
-		proxyUrl: 'http://crossorigin.me'
+		proxyUrl: 'http://crossorigin.me/'
 	});

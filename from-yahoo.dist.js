@@ -28450,7 +28450,7 @@ function extend() {
 },{}],245:[function(require,module,exports){
 
 require('./index')(dataForge, {
-		proxyUrl: 'http://crossorigin.me'
+		proxyUrl: 'http://crossorigin.me/'
 	});
 },{"./index":246}],246:[function(require,module,exports){
 'use strict';
