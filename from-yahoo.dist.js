@@ -28450,7 +28450,8 @@ function extend() {
 },{}],245:[function(require,module,exports){
 
 require('./index')(dataForge, {
-		proxyUrl: 'http://crossorigin.me/'
+		proxyUrl: 'http://crossorigin.me/',
+		encodeUrlForProxy: false,
 	});
 },{"./index":246}],246:[function(require,module,exports){
 'use strict';
@@ -28564,7 +28565,7 @@ module.exports = function (dataForge, globalOptions) {
 
 		var url = formatYahooUrl(code, options);
 		if (globalOptions.proxyUrl) {
-			url = globalOptions.proxyUrl + encodeURIComponent(url);	
+			url = globalOptions.proxyUrl + globalOptions.encodeUrlForProxy ? encodeURIComponent(url) : url;
 		}
 		
 		return request({

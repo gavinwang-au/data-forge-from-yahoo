@@ -109,7 +109,7 @@ module.exports = function (dataForge, globalOptions) {
 
 		var url = formatYahooUrl(code, options);
 		if (globalOptions.proxyUrl) {
-			url = globalOptions.proxyUrl + encodeURIComponent(url);	
+			url = globalOptions.proxyUrl + globalOptions.encodeUrlForProxy ? encodeURIComponent(url) : url;
 		}
 		
 		return request({
