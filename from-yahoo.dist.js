@@ -28565,7 +28565,12 @@ module.exports = function (dataForge, globalOptions) {
 
 		var url = formatYahooUrl(code, options);
 		if (globalOptions.proxyUrl) {
-			url = globalOptions.proxyUrl + globalOptions.encodeUrlForProxy ? encodeURIComponent(url) : url;
+			if (globalOptions.encodeUrlForProxy) {
+				url = globalOptions.proxyUrl + encodeURIComponent(url);
+			}
+			else {
+				url = globalOptions.proxyUrl + url;
+			}
 		}
 		
 		return request({
