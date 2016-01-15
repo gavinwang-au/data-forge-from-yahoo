@@ -1,1 +1,2 @@
-browserify browser-source.js | uglifyjs > from-yahoo.dist.js 
+browserify browser-source.js > from-yahoo.dist.js 
+uglifyjs from-yahoo.dist.js > from-yahoo.min.js 
