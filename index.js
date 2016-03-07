@@ -117,7 +117,7 @@ module.exports = function (dataForge, globalOptions) {
 		var proxyUrl = options.proxyUrl || globalOptions.proxyUrl;
 
 		if (proxyUrl) {
-			var encodeUrlForProxy = optios.encodeUrlForProxy || globalOptions.encodeUrlForProxy;
+			var encodeUrlForProxy = options.encodeUrlForProxy || globalOptions.encodeUrlForProxy;
 			if (encodeUrlForProxy) {
 				url = proxyUrl + encodeURIComponent(url);
 			}
