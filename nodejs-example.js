@@ -1,5 +1,5 @@
 var dataForge = require('data-forge')
-dataForge.use(require('data-forge-from-yahoo'));
+dataForge.use(require('./index'));
 
 dataForge.fromYahoo('ABC.AX')
 	.then(function (dataFrame) {

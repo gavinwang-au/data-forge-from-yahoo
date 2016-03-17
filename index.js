@@ -59,52 +59,6 @@ module.exports = function (dataForge, globalOptions) {
 		return url;
 	};
 
-	//
-	// Parse CSV data from Yahoo API.
-	//
-	var parseYahooCsv = function (csv) {
-		var lines = Enumerable.from(csv.split('\n'))
-			.select(function (row) {
-				return Enumerable.from(row.split(','))
-					.select(function (col) {
-						return col.trim();
-					})
-					.toArray();
-			})
-			.where(function (cols) {
-				if (cols.length > 1) {
-					return true;
-				}
-				else if (cols.length == 1) {
-					return cols[0].length > 0;
-				}
-				else {
-					return false;
-				}
-			})
-			.toArray();
-
-		var header = lines[0];
-		var rows = Enumerable.from(lines)
-			.skip(1) // Cut out header.
-			.select(function (cols) {
-				return Enumerable.from(cols)
-					.select(function (value, index) {
-						if (index === 0) {
-							value = moment(value).toDate(); // Treat first column as date.
-						}
-						else {
-							value = parseFloat(value); // Every other column is a number.
-						}
-						return value;
-					})
-					.toArray();
-			})
-			.toArray();
-
-		return new dataForge.DataFrame({ columnNames: header, rows: rows });
-	};
-
 	// 
 	// Load CSV data from Yahoo.
 	//
@@ -132,7 +86,7 @@ module.exports = function (dataForge, globalOptions) {
 				dataType: 'text',
 			})
 			.then(function (data) {
-				return parseYahooCsv(data);
+				return new dataForge.fromCSV(data);
 			});
 	};
 
