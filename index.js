@@ -89,7 +89,13 @@ module.exports = function (dataForge, globalOptions) {
 				return dataForge.fromCSV(data);
 			})
 			.then(function (dataFrame) {
-				return dataFrame.parseDates("Date");
+				return dataFrame.parseDates("Date")
+					.parseFloats("Adj Close")
+					.parseFloats("Close")					
+					.parseFloats("High")
+					.parseFloats("Low")
+					.parseFloats("Open")
+					.parseInts("Volume"); //todo: be nice for this fn to take an array of col names.
 			});
 	};
 
