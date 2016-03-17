@@ -86,7 +86,7 @@ module.exports = function (dataForge, globalOptions) {
 				dataType: 'text',
 			})
 			.then(function (data) {
-				return new dataForge.fromCSV(data);
+				return dataForge.fromCSV(data);
 			});
 	};
 
