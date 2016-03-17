@@ -28540,6 +28540,9 @@ module.exports = function (dataForge, globalOptions) {
 			})
 			.then(function (data) {
 				return dataForge.fromCSV(data);
+			})
+			.then(function (dataFrame) {
+				return dataFrame.parseDates("Date");
 			});
 	};
 
