@@ -97,7 +97,8 @@ module.exports = function (dataForge, globalOptions) {
 					.parseFloats("High")
 					.parseFloats("Low")
 					.parseFloats("Open")
-					.parseInts("Volume"); //todo: be nice for this fn to take an array of col names.
+					.parseInts("Volume") //todo: be nice for this fn to take an array of col names.
+					.bake(); // Bake it all into memory.
 			});
 	};
 
