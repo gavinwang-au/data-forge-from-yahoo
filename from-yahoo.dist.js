@@ -28539,7 +28539,9 @@ module.exports = function (dataForge, globalOptions) {
 				dataType: 'text',
 			})
 			.then(function (data) {
-				return dataForge.fromCSV(data);
+				return dataForge.fromCSV(data, {
+					skipEmptyLines: true,
+				});
 			})
 			.then(function (dataFrame) {
 				return dataFrame.parseDates("Date")
